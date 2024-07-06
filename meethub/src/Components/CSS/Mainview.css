@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: row;
     align-items:flex-start;
-    background-color: blanchedalmond;
+    background-color: rgb(255, 255, 255);
 margin-top: 70px;   
 }
 
@@ -135,4 +135,14 @@ align-items: flex-start;
 
 .join:disabled {
   box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.showimgdiv{
+  margin-right: 25px;
+}
+.showimg{
+ scale: 0.8;
+ border-radius: 20px;
+ margin-left: 0;
+
 }

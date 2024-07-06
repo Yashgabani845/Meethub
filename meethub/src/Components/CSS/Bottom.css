@@ -1,0 +1,54 @@
+.bottom{
+    height: fit-content;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bottomtitle{
+    height: fit-content;
+    font-size:55px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 300;
+}
+.bottomshow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.bottomcard{
+    min-height: 350px;
+    width: 450px;
+    border-radius: 15px;
+   margin-top: 30px;
+    margin-left: 25px;
+    margin-right: 25px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.bottomcard img{
+    height: 350px;
+    width: 450px;
+    border-radius: 15px;
+    box-shadow: 0 0 5px 5px rgba(119, 112, 112, 0.2);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.bcarddesc{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bdesctitle{
+    font-weight:lighter;
+    font-size: x-large;
+    margin-top: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.bdesccontent{
+    font-weight: normal;
+    font-size: medium;
+    margin-top: 5px;
+}

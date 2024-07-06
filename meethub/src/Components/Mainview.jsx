@@ -1,6 +1,6 @@
 import React from "react";
 import "./CSS/Mainview.css"
-
+import meetback from "./meet1.png"
 const Mainview=()=>{
 return (
 <div className="mainview" >
@@ -13,7 +13,7 @@ return (
 </div>
 </div>
 <div className="right">
-
+<div className="showimgdiv"><img src={meetback} alt="" className="showimg" /></div>
 </div>
 </div>
 );
