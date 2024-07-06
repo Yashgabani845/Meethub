@@ -1,7 +1,7 @@
 import React from "react";
 import "./CSS/Bottom.css";
-import chat1 from "./chat1.png";
-import custom from "./custom.png";
+import chat1 from "./Image/chat1.png";
+import custom from "./Image/custom.png";
 const Bottomview = ()=>{
     return(
         <div className="bottom">

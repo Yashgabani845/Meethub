@@ -35,6 +35,9 @@
     margin-left: 10px;
     margin-right: 10px;
 }
+.bottomcard img:hover{
+    transform: scale(1.05);
+}
 .bcarddesc{
     margin-top: 15px;
     display: flex;

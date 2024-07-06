@@ -28,6 +28,7 @@
    align-items: center;
 
 }
+
 .card img , .card1 img , .card2 img{
     height: 250px;
     width: 320px;
@@ -36,7 +37,9 @@
     margin-left: 10px;
     margin-right: 10px;
 }
-
+.card img:hover , .card1 img:hover  , .card2 img:hover {
+    transform: scale(1.05);
+}
 .carddesc{
     display: flex;
     flex-direction: column;

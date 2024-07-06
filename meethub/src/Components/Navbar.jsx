@@ -4,7 +4,7 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import SettingsIcon from '@mui/icons-material/Settings';
 import ManageHistoryIcon from '@mui/icons-material/ManageHistory';
 import "./CSS/Navbar.css";
-import logo from  "./logomeet.png"
+import logo from  "./Image/logomeet.png"
 
 function Navbar (){
     return(

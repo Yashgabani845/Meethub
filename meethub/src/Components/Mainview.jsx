@@ -1,6 +1,6 @@
 import React from "react";
 import "./CSS/Mainview.css"
-import meetback from "./meet1.png"
+import meetback from "./Image/meet1.png"
 const Mainview=()=>{
 return (
 <div className="mainview" >

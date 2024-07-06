@@ -1,8 +1,8 @@
 import React from "react";
 import "./CSS/Midview.css";
-import solo from "./solo1.png";
-import group from "./group.png";
-import proff from "./professional.png";
+import solo from "./Image/solo1.png";
+import group from "./Image/group.png";
+import proff from "./Image/professional.png";
 function Midview  (){
    return(
     <div className="midview">
