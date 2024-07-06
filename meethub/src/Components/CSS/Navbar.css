@@ -1,0 +1,18 @@
+nav{
+    background-color: rgb(220, 229, 235);
+    height:70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}   
+.logo{
+    height: 70px;
+    width:150px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.logodiv{
+    margin-left: 20px;
+    margin-right: 20px;
+}
