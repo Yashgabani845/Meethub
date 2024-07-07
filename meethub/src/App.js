@@ -1,17 +1,18 @@
 import './App.css';
-import Navbar from './Components/Navbar';
-import Mainview from './Components/Mainview';
-import Midview from './Components/Midview';
-import Footer from './Components/Footer';
-import Bottomview from './Components/Bottomview';
+import Homepage from './Components/Homepage';
+import VideoCall from './Components/Videocall';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+const { io } = require("socket.io-client");
+
 function App() {
   return (
     <div className="App">
-  <Navbar/>  
-  <Mainview/>
-  <Midview/>
-  <Bottomview/>
-  <Footer/>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/videocall" element={<VideoCall />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
