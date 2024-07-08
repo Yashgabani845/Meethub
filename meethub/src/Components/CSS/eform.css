@@ -18,7 +18,7 @@ label {
     font-size: 16px;
 }
 
-input {
+.code ,.name {
     display: flex;
     margin: 10px 0;
     border-radius: 15px;
@@ -33,7 +33,7 @@ input {
     transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-input:focus {
+.code:focus , .name {
     border-color: #007bff;
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
     outline: none;
