@@ -9,7 +9,7 @@ return (
 <div className="slogan">Seamlessly embed video calling into your platform via Whereby’s API and SDK, ideal for Telehealth, Digital Mental Health, Coaching, eLearning and more.</div>
 <div className="buttons">
     <button className="create">Create Meeting</button>
-    <button className="join">Join Via Code</button>
+    <a href="/enter"><button className="join">Join Via Code</button></a>
 </div>
 </div>
 <div className="right">

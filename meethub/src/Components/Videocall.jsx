@@ -5,17 +5,15 @@ const VideoCall = () => {
   const [socket, setSocket] = useState(null);
   const [peers, setPeers] = useState([]);
   const localVideoRef = useRef(null);
-  const peerConnections = useRef({});
   const remoteVideoRefs = useRef({});
+  const peerConnections = useRef({});
 
   useEffect(() => {
     const s = io('http://localhost:5000');
     setSocket(s);
 
-    s.on('connect', () => {
-      const roomId = 'test-room'; // example room ID
-      s.emit('join-room', roomId);
-    });
+    const roomId = 'test-room'; // example room ID
+    s.emit('join-room', roomId);
 
     s.on('all-users', users => {
       users.forEach(userID => {
@@ -92,7 +90,7 @@ const VideoCall = () => {
   return (
     <div>
       <h1>Video Call</h1>
-      <video ref={localVideoRef} autoPlay  muted />
+      <video ref={localVideoRef} autoPlay playsInline muted />
       <div ref={remoteVideoRefs}></div>
     </div>
   );
