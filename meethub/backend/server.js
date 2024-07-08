@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser=require('body-parser');
 const{Server}=require('socket.io');
 const { Socket } = require('socket.io-client');
-const io = new Server();
+const io = new Server({cors:true});
 const app = express();
 app.use(bodyParser.json());
 
@@ -10,8 +10,8 @@ const joinednames = new Map();
 
 
 io.on('connection',(socket)=>{
-socket.on('join-room',(data)=>{
-    
+socket.on('joining',(data)=>{
+    console.log('new connection');
     const {name,code}=data;
     console.log('user',name,'joined');
     joinednames.set(code,socket.id);
