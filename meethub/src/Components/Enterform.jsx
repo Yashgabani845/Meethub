@@ -1,16 +1,27 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import "./CSS/eform.css";
 import {useSocket} from "../Components/Socket";
 const Enterform=()=>{
     const {socket}=useSocket();
-    socket.emit('joining',{
-            name : "yashgabani",
-            code: 505152
-    });
+    const navigate = useNavigate();
+   
     const [name,setname]=useState();
     const [code,setcode]=useState();
+
+    const handlejoined=({code})=>{
+        console.log('joined');
+        navigate(`meeting/${code}`)
+
+    }
+    useEffect(()=>{
+        socket.on("joinme",handlejoined)
+        
+    },[socket])
+
+
     const handlejoinroom=()=>{
-          socket.emit('joining',{
+          socket.emit("joining",{
                 name:name,
                 code:code
           })
