@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from "react";
+import React,{useEffect, useState,useCallback} from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import "./CSS/eform.css";
 import {useSocket} from "../Components/Socket";
@@ -9,14 +9,15 @@ const Enterform=()=>{
     const [name,setname]=useState();
     const [code,setcode]=useState();
 
-    const handlejoined=({code})=>{
+    const handlejoined=useCallback(({code})=>{
         console.log('joined');
         navigate(`meeting/${code}`)
-
-    }
+    },[navigate]);
     useEffect(()=>{
         socket.on("joinme",handlejoined)
-        
+        return ()=>{
+            socket.off("joinme",handlejoined)
+        }
     },[socket])
 
 

@@ -22,13 +22,21 @@ socket.on('joining',(data)=>{
 });
 socket.on('call-user',(data)=>{
     console.log('call user called')
-    const {}=data;
+    const {name,offer}=data;
     const socketid = joinednames.get(name);
-    const from = sockettonames.get(socket.id);
-    socket.to(socketid).emit('incoming',{from : from})
-    console.log('incoming from ',from)
+    const fromname = sockettonames.get(socket.id);
+    socket.to(socketid).emit('incoming',{from : fromname,offer})
+    console.log('incoming from ',fromname)
+
 })
-});
+
+socket.on('call-accept',data=>{
+    const {from,ans}=data;
+    const socketid=joinednames.get(from);
+socket.to(socketid).emit('call-accepted',{ans});
+
+})
+})
 
 
 app.listen(5000,()=>{

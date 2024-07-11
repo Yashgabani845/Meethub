@@ -11,6 +11,13 @@ const PeerProvider = (props)=>{
         await peer.setLocalDescription(offer)
         return offer;
     }
+
+    const createanswer = async(offer)=>{
+        await peer.setRemoteDescription(offer);
+        const answer=await peer.createAnswer();
+        await peer.setLocalDescription(answer);
+        return answer;
+    }
     return(
          <PeerContext.Provider value={{peer,createOffer}}>
             {props.children}

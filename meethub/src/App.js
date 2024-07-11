@@ -6,6 +6,7 @@ import SocketProvider from './Components/Socket';
 import PeerProvider from "./Components/Peer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Room from './Components/Room';
+import VideoComponent from './Components/VideoComponent';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
          
             <Route path="/" element={<Homepage />} />
             <Route path="/enter/meeting/:code" element={<Room />} />
-            <Route path="/videocall" element={<VideoCall />} />
+            <Route path="/videocall" element={<VideoComponent/>} />
             <Route path="/enter" element={<Enterform />} />
          
         </Routes>
