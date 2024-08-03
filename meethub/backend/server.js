@@ -1,47 +1,12 @@
 const express = require('express');
-const bodyParser=require('body-parser');
-const{Server}=require('socket.io');
-const io = new Server({cors:true});
 const app = express();
-app.use(bodyParser.json());
+const http = require('http');
+const { Server } = require("socket.io");
+const server = http.createServer(app);
+const cors = require('cors');
+app.use(cors());
 
-const joinednames = new Map();
-const sockettonames = new Map();
 
-io.on('connection',(socket)=>{
-socket.on('joining',(data)=>{
-    console.log('new connection');
-    const {name,code}=data;
-    console.log('user',name,'joined');
-    joinednames.set(code,socket.id);
-    sockettonames.set(socket.id,name)
-    socket.join(code);
-    socket.emit('joinme',{code})
-    socket.broadcast.to(code).emit('user-joined',{code});
-    console.log('join me emitted , broadcast done');
+server.listen(5010, () => {
+    console.log("Server is running on port 5010");
 });
-socket.on('call-user',(data)=>{
-    console.log('call user called')
-    const {name,offer}=data;
-    const socketid = joinednames.get(name);
-    const fromname = sockettonames.get(socket.id);
-    socket.to(socketid).emit('incoming',{from : fromname,offer})
-    console.log('incoming from ',fromname)
-
-})
-
-socket.on('call-accept',data=>{
-    const {from,ans}=data;
-    const socketid=joinednames.get(from);
-socket.to(socketid).emit('call-accepted',{ans});
-
-})
-})
-
-
-app.listen(5000,()=>{
-    console.log('server is running on 5000 port');
-})
-io.listen(5001,()=>{
-    console.log('io server is running on 5001');
-})
