@@ -1,7 +1,7 @@
 import './App.css';
-import EnterForm from './Components/Enterform';
+import Appp from './Components/Appp';
+import EnterForm from './Components/Appp';
 import Homepage from './Components/Homepage';
-import Meeting from './Components/Meeting'; // Import the Meeting component
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -10,8 +10,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/enter" element={<EnterForm />} />
-          <Route path="/meeting/:roomId" element={<Meeting />} /> {/* Define the Meeting route */}
+          <Route path="/enter" element={<Appp />} />
         </Routes>
       </Router>
     </div>
