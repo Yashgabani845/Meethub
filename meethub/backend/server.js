@@ -1,12 +1,17 @@
 const express = require('express');
-const app = express();
 const http = require('http');
-const { Server } = require("socket.io");
-const server = http.createServer(app);
 const cors = require('cors');
+const socketIO = require('socket.io');
+
+const app = express();
+const server = http.createServer(app);
+
+const PORT = 5010;
+
 app.use(cors());
+app.use(express.json());
 
 
-server.listen(5010, () => {
-    console.log("Server is running on port 5010");
+server.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
